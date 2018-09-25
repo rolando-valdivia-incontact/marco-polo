@@ -37,11 +37,11 @@ pipeline {
                 sh 'npm test integrationtest/integrationtest.js'
             }
         }
-        stage('Teardown') {
-            steps {
-                sh 'docker kill marco-polo'
-                sh 'docker rm marco-polo'
-            }
+    }
+    post {
+        always {
+            sh 'docker kill marco-polo'
+            sh 'docker rm marco-polo'
         }
     }
 }
