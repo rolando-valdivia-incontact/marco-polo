@@ -13,13 +13,14 @@ pipeline {
         }
         stage('Packaging') {
             steps {
-
+                sh 'echo packaging...'
             }
         }
         stage('Deploying Infra') {
             steps {
                 //withCredentials()
                 //cfnUpdate()
+                sh 'echo deploying...'
             }
         }
         stage('Integration Tests') {
