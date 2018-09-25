@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Prereqs') {
             steps {
-                sh 'npm install --save-dev mocha chai express supertest'
+                sh 'npm install --save-dev mocha chai express supertest pm2@latest'
             }
         }
         stage('Unit Tests') {
@@ -21,7 +21,7 @@ pipeline {
                 //withCredentials()
                 //cfnUpdate()
                 sh 'echo deploying...'
-                sh 'node app.js '
+                sh 'pm2 start app.js '
             }
         }
         stage('Integration Tests') {
@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Teardown') {
             steps {
-                sh 'kill $(ps -a | grep "node app.js" | head | cut -c1-5)'
+                sh 'pm2 stop all'
             }
         }
     }
