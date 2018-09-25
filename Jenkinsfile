@@ -30,7 +30,7 @@ pipeline {
                 sh 'npm test integrationtest/integrationtest.js'
             }
         }
-        stage('Teardown' {
+        stage('Teardown') {
             steps {
                 sh 'kill $(ps -a | grep "node app.js" | head | cut -c1-5)'
             }
