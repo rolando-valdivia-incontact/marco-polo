@@ -40,8 +40,9 @@ pipeline {
     }
     post {
         always {
-            sh 'docker kill marco-polo'
-            sh 'docker rm marco-polo'
+            sh 'Removing containers...'
+            //sh 'docker kill marco-polo'
+            //sh 'docker rm marco-polo'
         }
     }
 }
