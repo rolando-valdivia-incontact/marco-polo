@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 app.get('/marco', function (req, res) {
-  res.send('Polo!');
+  res.status(200).send('Polo!');
 });
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+var server = app.listen(3000, function () {
+    var port = server.address().port;
+    console.log('Example app listening on port %s!',port);
 });
+module.exports = server;
