@@ -26,7 +26,7 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 //withCredentials()
-                sh 'mocha integrationtest/integrationtest.js'
+                sh 'npm test integrationtest/integrationtest.js'
             }
         }
     }
