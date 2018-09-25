@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Prereqs') {
             steps {
-                sh 'npm install --save-dev mocha chai express'
+                sh 'npm install --save-dev mocha chai express supertest'
             }
         }
         stage('Unit Tests') {

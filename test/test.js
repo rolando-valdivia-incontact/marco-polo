@@ -2,21 +2,29 @@
 
 // jshist expr: true
 
-var chai = require('chai'),
-  expect = chai.expect;
-
-  chai.should();
-
-  function isEven(num) {
-    return num % 2 ===0;
-  }
-
-  describe('isEven', function() {
-    it('should return true when number is even', function() {
-      isEven(4).should.be.true;
-    });
-
-    it('should return false when number is odd', function() {
-      isEven(5).should.be.false;
-    });
+var request = require('supertest');
+describe('loading express', function() {
+  var server;
+  beforeEach(function() {
+    server = require('./../app');
   });
+  this.afterEach(function() {
+    server.close();
+  });
+  it('responds to /marco with Polo!', function testSlash(done) {
+    request(server)
+      .get('/marco')
+      .expect('Polo!')
+      .expect(200, done);
+  });
+  it('404 everything else', function testPath(done) {
+    request(server)
+      .get('/foo/bar')
+      .expect(404, done);
+  });
+  it('404 /', function testPath(done) {
+    request(server)
+      .get('/')
+      .expect(404, done);
+  });
+});
