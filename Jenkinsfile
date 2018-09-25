@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Unit Tests') {
             steps {
-                sh 'mocha test.js'
+                sh 'node node_modules/.bin/mocha'
+                sh 'npm test'
             }
         }
     }
