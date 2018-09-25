@@ -21,6 +21,7 @@ pipeline {
                 //withCredentials()
                 //cfnUpdate()
                 sh 'echo deploying...'
+                sh 'node app.js '
             }
         }
         stage('Integration Tests') {
@@ -29,5 +30,10 @@ pipeline {
                 sh 'npm test integrationtest/integrationtest.js'
             }
         }
+        stage('Teardown' {
+            steps {
+                sh 'kill $(ps -a | grep "node app.js" | head | cut -c1-5)'
+            }
+        })
     }
 }
