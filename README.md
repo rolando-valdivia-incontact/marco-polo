@@ -1,6 +1,7 @@
-#Marco-Polo: A CICD Example in NodeJS, Docker and Jenkins Pipelines
+# Marco-Polo
+A CICD Example in NodeJS, Docker and Jenkins Pipelines
 
-#Steps
+# Steps
 1. create git repo
 2. clone locally
 3. install node
@@ -20,7 +21,7 @@
 17. Repeat for other environments
 
 
-#Bonus Pipeline Example
+# Bonus Pipeline Example
 1. Take integration tests stage, replicate into synthetic monitors at the endpoint
 2. Use pipeline syntax for post/failure to trigger remediation actions if tests fail
 3. Retrigger the synthetic monitor
