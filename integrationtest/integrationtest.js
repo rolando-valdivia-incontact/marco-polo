@@ -1,6 +1,6 @@
 var request = require('supertest');
 
-describe('Can hit the deployed app', function() {
+describe('Running integration tests on the locally deployed app', function() {
     it('responds to /marco with Polo!', function testSlash(done) {
         request('http://localhost:3000')
           .get('/marco')

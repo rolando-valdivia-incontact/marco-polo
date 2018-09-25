@@ -1,9 +1,6 @@
-'use strict';
-
-// jshist expr: true
-
 var request = require('supertest');
-describe('loading express', function() {
+
+describe('Running unit tests in memory', function() {
   var server;
   beforeEach(function() {
     server = require('./../app');
