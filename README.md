@@ -26,7 +26,7 @@ A CICD Example in NodeJS, Docker and Jenkins Pipelines
 2. Use pipeline syntax for post/failure to trigger remediation actions if tests fail
 3. Retrigger the synthetic monitor
 
-#Future Enchancements
+# Future Enchancements
 1. Deployment to AWS/ECS, etc
 2. Deployment to Artifactory/DockerHub
 3. Pipeline gating
