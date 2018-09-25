@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'docker pull usemtech/nodejs-mocha' }
-    }
+    agent any
     stages {
         stage('Prereqs') {
             sh 'npm install mocha chai express'
