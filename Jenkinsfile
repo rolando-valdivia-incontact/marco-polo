@@ -36,10 +36,10 @@ pipeline {
         }
     }
     post {
-        always {
+        cleanup {
             sh 'echo Removing containers...'
-            //sh 'docker kill marco-polo'
-            //sh 'docker rm marco-polo'
+            sh 'docker kill marco-polo'
+            sh 'docker rm marco-polo'
         }
     }
 }
