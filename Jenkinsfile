@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sh 'echo deploying infra...'
                 withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
-                    sh 'docker run -d -p 3000:3000 --name marco-polo bnelford/marco-polo-node:latest'
+                    sh 'docker run -d -p 46141:3000 --name marco-polo bnelford/marco-polo-node:latest'
                 }
                 
             }
