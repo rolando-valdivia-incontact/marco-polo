@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent {
+        docker { image 'usemtech/nodejs' }
+    }
     stages {
         stage('Unit Tests') {
             steps {
