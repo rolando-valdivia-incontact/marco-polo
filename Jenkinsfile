@@ -14,7 +14,7 @@ pipeline {
         stage('Packaging') {
             steps {
                 sh 'echo packaging...'
-                sh 'docker build -t bnelford/marco-polo-latest .'
+                sh 'docker build -t bnelford/marco-polo-node .'
             }
         }
         stage('Deploying Infra') {
