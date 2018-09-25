@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    triggers { 
+        cron('H/15 * * * *') 
+    }
+    stages {
+        stage('Sythetic Monitors') {
+            steps {
+                sh 'npm test integrationtest/integrationtest.js'
+                post {
+                    failure {
+                        sh 'docker restart marco-polo'
+                    }
+                }
+            }
+        }
+    }
+}
