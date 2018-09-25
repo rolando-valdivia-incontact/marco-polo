@@ -20,10 +20,7 @@ pipeline {
         stage('Deploying Infra') {
             steps {
                 sh 'echo deploying infra...'
-                //withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
-                    sh 'docker run -d -p 46141:3000 --name marco-polo bnelford/marco-polo-node:latest'
-                //}
-                
+                sh 'docker run -d -p 46141:3000 --name marco-polo bnelford/marco-polo-node:latest'
             }
         }
         //stage('Deploying Application') {
@@ -40,7 +37,7 @@ pipeline {
     }
     post {
         always {
-            sh 'Removing containers...'
+            sh 'echo Removing containers...'
             //sh 'docker kill marco-polo'
             //sh 'docker rm marco-polo'
         }
