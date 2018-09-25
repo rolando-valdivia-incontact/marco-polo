@@ -1,0 +1,26 @@
+{
+  "name": "marco-polo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnelford/marco-polo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnelford/marco-polo/issues"
+  },
+  "homepage": "https://github.com/bnelford/marco-polo#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
