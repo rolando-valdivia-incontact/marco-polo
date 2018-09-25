@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Prereqs') {
             steps {
-                sh 'npm install --save-dev mocha chai express supertest pm2@latest'
+                sh 'npm install --save-dev mocha express supertest'
             }
         }
         stage('Unit Tests') {
@@ -18,15 +18,17 @@ pipeline {
         }
         stage('Deploying Infra') {
             steps {
-                //withCredentials()
-                //cfnUpdate()
-                sh 'echo deploying...'
+                sh 'echo deploying infra...'
+            }
+        }
+        stage('Deploying Application') {
+            steps {
+                sh 'echo deploying app...'
                 sh 'pm2 start app.js '
             }
         }
         stage('Integration Tests') {
             steps {
-                //withCredentials()
                 sh 'npm test integrationtest/integrationtest.js'
             }
         }

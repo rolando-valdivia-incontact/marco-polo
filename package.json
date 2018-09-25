@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/bnelford/marco-polo#readme",
   "dependencies": {
-    "chai": "^4.1.2",
     "express": "^4.16.3",
     "request": "^2.88.0",
     "supertest": "^3.3.0"
