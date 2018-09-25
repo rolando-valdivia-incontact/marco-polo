@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh 'echo deploying infra...'
                 sh 'docker run -d -p 30000:3000 --name marco-polo bnelford/marco-polo-node:latest'
+                sh 'sleep 5'
             }
         }
         //stage('Deploying Application') {
