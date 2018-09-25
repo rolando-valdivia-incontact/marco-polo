@@ -20,9 +20,9 @@ pipeline {
         stage('Deploying Infra') {
             steps {
                 sh 'echo deploying infra...'
-                withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
+                //withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
                     sh 'docker run -d -p 46141:3000 --name marco-polo bnelford/marco-polo-node:latest'
-                }
+                //}
                 
             }
         }
