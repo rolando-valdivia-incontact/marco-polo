@@ -31,3 +31,4 @@ A CICD Example in NodeJS, Docker and Jenkins Pipelines
 2. Deployment to Artifactory/DockerHub
 3. Pipeline gating
 4. Security Scanning
+5. Pull requests for triggering builds
