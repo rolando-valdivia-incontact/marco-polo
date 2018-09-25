@@ -11,5 +11,22 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Packaging') {
+            steps {
+
+            }
+        }
+        stage('Deploying Infra') {
+            steps {
+                //withCredentials()
+                //cfnUpdate()
+            }
+        }
+        stage('Integration Tests') {
+            steps {
+                withCredentials()
+                sh 'mocha test/integrationtest.js'
+            }
+        }
     }
 }
