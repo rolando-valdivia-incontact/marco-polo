@@ -3,7 +3,9 @@ pipeline {
 
     stages {
         stage('Unit Tests') {
-            sh 'mocha test.js'
+            steps {
+                sh 'mocha test.js'
+            }
         }
     }
 }
