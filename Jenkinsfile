@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'usemtech/nodejs' }
+        docker { image 'docker pull usemtech/nodejs-mocha' }
     }
     stages {
         stage('Unit Tests') {
