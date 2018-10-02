@@ -2,8 +2,5 @@
 import com.inContact.pipeline.*
 
 basicPipeline {
-    template = 'nodejs'
-    deployType = 'docker'
-    packaginType = 'docker'
-    deployGate = true
+    propertiesFile = "pipeline.properties"
 }
