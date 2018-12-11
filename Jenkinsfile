@@ -1,6 +1,6 @@
-@Library('cicd-pipeline-templates@BeforeCoreAfter') _
+@Library('cicd-pipeline-templates@dec_review') _
 import com.inContact.pipeline.*
 
-basicPipeline {
-    propertiesFile = "pipeline.properties"
+icPipeline {
+    templateName = 'nodejs'
 }
